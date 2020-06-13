@@ -1,0 +1,13 @@
+{
+  "dashboard" : {
+    "oauthSecret": "ZhfdhBu49K_b-6Q6M71QbdcZmmhe2foK",
+    "callbackURL": "https://careful-fast-saturn.glitch.me",
+    "sessionSecret": "",
+    "domain": "",
+    "port": 3030
+  },
+  "bot":{
+    "prefix":"=",
+    "developers":["635569641883697152","572512230701006851"]
+  } 
+}

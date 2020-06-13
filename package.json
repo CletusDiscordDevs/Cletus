@@ -1,0 +1,46 @@
+{
+  "name": "cletus",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "exports": null,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon --trace-warnings index.js"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "better-sqlite3": "^7.0.1",
+    "canvas": "^2.6.1",
+    "canvas-constructor": "^3.2.0",
+    "common-tags": "^1.8.0",
+    "discord.js": "^12.2.0",
+    "ffmpeg-static": "^4.2.2",
+    "ms": "^2.1.2",
+    "node-fetch": "^2.6.0",
+    "node-superfetch": "^0.1.10",
+    "quick.db": "^7.1.1",
+    "yt-search": "^1.1.2",
+    "ytdl-core": "^2.1.5"
+  },
+  "dev-dependencies": {
+    "pkg": "^4.4.8",
+    "eslint": "^6.8.0",
+    "nodemon": "^2.04",
+    "pm2": "^4.4.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "bin": "index.js",
+  "pkg": {
+    "scripts": [
+      "Handlers/*.js",
+      "Commands/**/*.js"
+    ]
+  }
+}
