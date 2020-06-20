@@ -15,7 +15,30 @@ module.exports = {
   path: __filename,
   run: async (client, message, args) => {
 
-    let msg = await message.channel.send('Generating image...');
+    
+    let canvas = createCanvas(512, 512);
+    let ctx = canvas.getContext('2d');
+    let mention = message.mentions.users.size > 0 ? message.mentions.members.last().user : message.author;
+    let avatar = await loadImage(mention.displayAvatarURL({ format: "png", size: 512 }));
+
+    ctx.drawImage(avatar, 0, 0);
+
+    let imageData = ctx.getImageData(0, 0, avatar.width, avatar.height);
+    let data = imageData.data;
+
+    for(let i = 0; i < data.length; i += 4) {
+        // red
+        data[i] = 255 - data[i];
+        // green
+        data[i + 1] = 255 - data[i + 1];
+        // blue
+        data[i + 2] = 255 - data[i + 2];
+    }
+    ctx.putImageData(imageData, 0, 0);
+    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'inverted.png');
+    message.channel.send(attachment); 
+    
+    /*let msg = await message.channel.send('Generating image...');
     let background = await loadImage(`./Assets/Images/image.png`);
     let imageSize = 4096;
     let imageSizeNew = imageSize/16;
@@ -43,7 +66,7 @@ module.exports = {
     embed.attachFiles(attachment)
     embed.setImage('attachment://random.jpg');
     msg.delete();
-    return message.channel.send({embed: embed})
+    return message.channel.send({embed: embed})*/
     // return msg.edit(null, {embed: embed})
 
   }

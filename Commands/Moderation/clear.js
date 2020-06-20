@@ -12,7 +12,7 @@ module.exports = {
   description: "Clear messages",
   run: async (client, message, args) => {
 
-   if (!args[0]) return message.channel.send(new Discord.MessageEmbed().setDescription('You haven\'t given an amount of messages which should be deleted!'));
+    if (!args[0]) return message.channel.send(new Discord.MessageEmbed().setDescription('You haven\'t given an amount of messages which should be deleted!'));
     if (isNaN(args[0])) return message.channel.send(new Discord.MessageEmbed().setDescription("The amount parameter isn't a number!"));
     if (args[0] > 100) return message.channel.send(new Discord.MessageEmbed().setDescription("You can't delete more than 100 messages at once!"));
     if (args[0] < 1) return message.reply(new Discord.MessageEmbed().setDescription('You have to delete at least 1 message!'));

@@ -10,4 +10,4 @@
 //     });
 // });
 
-require('./bot.js')("NzA2OTk2NTYwOTgyMDQ4Nzc4.Xtf3KA.SFP9THEFsti8nKUrXy_QpP-unNk","=")
+require('./bot.js')("NzA5NDg3MjY0OTYyNDQ1MzYy.XuvNJQ.4bc5UwsZ89tlX3wDW_T5UQZp9hw","=")

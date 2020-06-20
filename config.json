@@ -1,13 +1,7 @@
 {
-  "dashboard" : {
-    "oauthSecret": "ZhfdhBu49K_b-6Q6M71QbdcZmmhe2foK",
-    "callbackURL": "https://careful-fast-saturn.glitch.me",
-    "sessionSecret": "",
-    "domain": "",
-    "port": 3030
-  },
-  "bot":{
-    "prefix":"=",
-    "developers":["635569641883697152","572512230701006851"]
-  } 
+  "mongodb": "mongodb+srv://Admin:Blaisesblaze@twitter-bot-opr7h.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "cooldown": 15000,
+  "prefix":"=",
+  "developers":["635569641883697152", "572512230701006851", "353637377081737238", "423203831971708958"]
+
 }
