@@ -29,6 +29,7 @@ function load(token, prefix){
 
   console.log(`Preparing to login`);
   client.config.prefix = prefix;
+  console.log(token)
   client.login(token).then(async () => {
 
   let developers = await Promise.all(client.config.developers.map(async function(ID){
