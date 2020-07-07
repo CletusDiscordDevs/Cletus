@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 const path = require('path');
 const db = require('quick.db');
 const ms = require('ms');
-const { get } = require('node-superfetch');
 const { Canvas } = require('canvas-constructor');
+
 module.exports = {
   name: "profile",
   dev: false,

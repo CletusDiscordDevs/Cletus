@@ -9,5 +9,7 @@
 //         require('./bot.js')(token, prefix);
 //     });
 // });
+require('dotenv').config();
 
-require('./bot.js')("NzA2OTk2NTYwOTgyMDQ4Nzc4.Xtf3KA.SFP9THEFsti8nKUrXy_QpP-unNk","=")
+let load = require('./bot');
+load(process.env.TOKEN,"=");
