@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "A simple Node app built on Express, instantly up and running.",
   "exports": null,
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon --trace-warnings index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon --trace-warnings src/index.js"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.2",

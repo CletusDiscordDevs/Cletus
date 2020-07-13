@@ -6,8 +6,8 @@ client.aliases = new Discord.Collection();
 client.music = new (require('./Lib/Music/index').MusicManager)();
 client.config = require('./config.json').bot;
 client.util = require('./Lib/Util/index');
-const constant = require('./node_modules/discord.js/src/util/Constants.js')
-constant.DefaultOptions.ws.properties.$browser = `Discord iOS`
+const constant = require(`${process.cwd()}/node_modules/discord.js/src/util/Constants.js`);
+constant.DefaultOptions.ws.properties.$browser = `Discord iOS`;
 
 
 client.on('message', (message) => {

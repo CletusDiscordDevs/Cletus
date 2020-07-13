@@ -1,14 +1,14 @@
 const path = require('path');
 const Discord = require('discord.js');
 const { createCanvas, loadImage, registerFont } = require('canvas');
-registerFont('./Assets/Fonts/KOMIKAX.ttf',{ family: "Comic" });
+registerFont('./src/Assets/Fonts/KOMIKAX.ttf', { family: "Comic" });
 
 module.exports = {
-  name: "invert",
-  dev: false,
+  name: "canvas",
+  dev: true,
   usage: {
-    doc: "invert",
-    example: "invert"
+    doc: "canvas",
+    example: "canvas"
   },
   category: path.basename(__dirname),
   description: "check your profile",

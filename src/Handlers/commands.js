@@ -5,8 +5,8 @@ const db = require('quick.db');
 module.exports = (client) => {
 
   let cmds = new Object();
-  fs.readdirSync("./Commands").forEach((dir) => {
-    let jsfiles = fs.readdirSync(`./Commands/${dir}`).filter((f) => f.endsWith(".js"));
+  fs.readdirSync(`./src/Commands`).forEach((dir) => {
+    let jsfiles = fs.readdirSync(`./src/Commands/${dir}`).filter((f) => f.endsWith(".js"));
     cmds[dir] = jsfiles;
   })
 
