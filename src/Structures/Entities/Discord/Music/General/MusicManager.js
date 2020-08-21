@@ -1,10 +1,14 @@
-const Player = require('./Player');
 const Discord = require('discord.js');
+const Player = require('./Player');
+const YoutubeManager = require("../Youtube/Manager.js");
+const SpotifyManager = require("../Spotify/Manager.js");
 
 class MusicManager {
   
   constructor(){
     this.players = new Discord.Collection();
+    this.youtube = new YoutubeManager();
+    this.spotify = new SpotifyManager();
   }
   
   delete(guildID){

@@ -9,10 +9,8 @@ module.exports = {
   },
   description: "Shows a apex legends status",
   run: async (client, message, args) => {
-    
-    let platform = args[0];
-    let user = args[1];
-    let res = await fetch(`https://public-api.tracker.gg/v2/apex/standard/profile/${platform}/${user}`, {
+
+    let res = await fetch(`https://public-api.tracker.gg/v2/apex/standard/profile/${args[0]}/${args[1]}`, {
       headers:{
         "TRN-Api-Key": process.env.TrackerAPI,
         "Accept":"application/json",
@@ -20,10 +18,9 @@ module.exports = {
       }
     });
     let body = await res.json();
-    if(res.status != 200){
-      console.log(res.status)
-      return message.channel.send('Something went wrong!');
-    }
+    console.log(res.status)
+    if(res.status != 200) return message.channel.send('Something went wrong!');
+    
     let fields = data(body);
     
     let segment = body.data.segments[0].stats;

@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const path = require('path');
 const util = require('util');
-const { stripIndents } = require('common-tags');
 
 module.exports = {
   name: "eval",
@@ -14,9 +13,11 @@ module.exports = {
   description: "Evaluates code",
   run: async (client, message, args) => {
     
+    if(!client.config.developers.includes(message.author.id)) return;
+
     try{
       let code = args[0].toLowerCase() == "-a" ? args.slice(1).join(" ") :  args.join(' ');
-      let decideAwait = args[0].toLowerCase() == "-a" ? stripIndents`(async () => {
+      let decideAwait = args[0].toLowerCase() == "-a" ? `(async () => {
       {code}
       })();`:`{code}`;
       decideAwait = decideAwait.replace(`{code}`, code);

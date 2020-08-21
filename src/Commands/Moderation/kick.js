@@ -11,7 +11,8 @@ module.exports = {
   category: path.basename(__dirname),
   description: "Kick tagged member",
   run: async (client, message, args) => {
-  const logger = client.guild.channels.cache.find(c => c.name === 'bot-logs');
+
+  const logger = client.channels.cache.find(c => c.name === 'bot-logs');
   if(message.channel.type == 'DM') return message.channel.send(new Discord.MessageEmbed().setDescription('You can use this command only in servers'));
 	if(!message.member.hasPermission('KICK_MEMBERS')) return message.reply(new Discord.MessageEmbed().setDescription("You haven't the permission to execute this command!"));
 	let mentionMember = message.mentions.members.first();

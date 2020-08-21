@@ -21,17 +21,17 @@ module.exports = {
     let ctx = canvas.getContext('2d');
 
     ctx.drawImage(avatar, 0, 0);
+    ctx.webkitImageSmoothingEnabled = false;
+    ctx.mozImageSmoothingEnabled = false;
+    ctx.msImageSmoothingEnabled = false;
+    ctx.imageSmoothingEnabled = false;
 
-    let imageData = ctx.getImageData(0, 0, avatar.width, avatar.height);
-    let data = imageData.data;
-
-    for(let i=0;i < data.length;i += 4){
-      data[i] = 255 - data[i];
-      data[i+1] = 255 - data[i+1];
-      data[i+2] = 255 - data[i+2];
-    }
-
-    ctx.putImageData(imageData, 0, 0);
+    var scaledWidth = avatar.width * 0.09;
+    var scaledHeight = avatar.height * 0.09;
+  
+    ctx.drawImage(avatar, 0, 0, scaledWidth, scaledHeight);
+  
+    ctx.drawImage(canvas, 0, 0, scaledWidth, scaledHeight, 0, 0, avatar.width, avatar.height);
 
     let attachment = new Discord.MessageAttachment(canvas.toBuffer(), "random.jpg");
     let embed = new Discord.MessageEmbed();

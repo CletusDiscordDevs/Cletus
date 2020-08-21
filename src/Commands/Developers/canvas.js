@@ -16,7 +16,7 @@ module.exports = {
   run: async (client, message, args) => {
 
     let msg = await message.channel.send('Generating image...');
-    let background = await loadImage(`./Assets/Images/image.png`);
+    let background = await loadImage(`./src/Assets/Images/image.png`);
     let imageSize = 4096;
     let imageSizeNew = imageSize/16;
     let avatar = await loadImage(message.author.displayAvatarURL({ format: "jpg", size: imageSize }));
