@@ -3,11 +3,11 @@ const db = require('quick.db');
 const path = require('path');
 
 module.exports = {
-  name: "test",
+  name: "setprefix",
   dev: true,
   usage: {
     doc: "test",
-    example: "test"
+    example: "setprefix [prefix]"
   },
   category: path.basename(__dirname),
   description: "Test command for developers",
