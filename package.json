@@ -19,7 +19,7 @@
     "ffmpeg-static": "^4.2.2",
     "ms": "^2.1.2",
     "nightmare": "^3.0.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "quick.db": "^7.1.1",
     "yt-search": "^1.1.2",
     "ytdl-core": "^2.1.5"
