@@ -4,7 +4,7 @@ module.exports = {
     name:"reload",
     aliases: ["reload"],
     category: "dev",
-    description: "Shows servers bot is in.",
+    description: "Reloads Commands provided.",
     dev: true,
     path: __filename,
     run: async (client, message, args) => {
