@@ -13,6 +13,7 @@ module.exports = {
     if(args.join(' ').length == 0) return message.channel.send(new Discord.MessageEmbed().setDescription('Need Query!'));
     let song = await player.getSong(args.join(' '));
     if(song == undefined) song = await player.getSong(args.join(' '));
+    if(!song) return message.channel.send("Unable to find song");
     player.queue.add(song.title, song.url, message.author);
     if(!player.playing) player.play();
     return message.channel.send(new Discord.MessageEmbed().setDescription(`Successfully added [${song.title}](${song.url})`));

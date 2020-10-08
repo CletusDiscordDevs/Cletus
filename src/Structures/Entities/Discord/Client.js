@@ -7,7 +7,7 @@ const FileWalker = require('../../Functions/Process/FileWalker');
 class Client extends Discord.Client {
 
     constructor(token, prefix){
-        super();
+        super(require("../../../config.json").bot.options);
         this.commands = new Discord.Collection();
         this.aliases = new Discord.Collection();
         this.music = new (require("./Music/index").MusicManager)();

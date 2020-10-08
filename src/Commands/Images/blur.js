@@ -19,7 +19,7 @@ module.exports = {
 
     let user = message.mentions.members.first() || message.author;
     let msg = await message.channel.send('Generating image...');
-    let avatar = await loadImage(user.displayAvatarURL({ format: "jpg", size: 4096 }));
+    let avatar = await loadImage(message.attachments[0] || args[0] || user.displayAvatarURL({ format: "jpg", size: 4096 }));
     let canvas = createCanvas(avatar.height,avatar.width);
     let ctx = canvas.getContext('2d');
 
