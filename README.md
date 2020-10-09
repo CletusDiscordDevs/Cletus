@@ -4,7 +4,7 @@
 [![Stars](https://img.shields.io/github/stars/572512230701006851/Cletus.svg)](https://github.com/572512230701006851/Cletus/stargazers)
 [![Release](https://img.shields.io/github/release/572512230701006851/Cletus.svg)](https://github.com/572512230701006851/Cletus/releases/latest)
 [![License](https://img.shields.io/github/license/572512230701006851/Cletus.svg)](https://github.com/572512230701006851/Cletus/blob/master/LICENSE)
-[![Discord](https://discordapp.com/api/guilds/679772731201290261/widget.png)](https://discord.gg/Z89dw6g)<br>
+[![Discord](https://discordapp.com/api/guilds/763830642579865660/widget.png)](https://discord.gg/TD8Z4Wc)<br>
 
 A multi-functional Discord bot with a abstract interface to setup and run for yourself!
 

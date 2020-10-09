@@ -25,7 +25,7 @@ module.exports = {
     let kickConfirmEmbed = new Discord.MessageEmbed();
     kickConfirmEmbed.setColor('#0099ff');
     kickConfirmEmbed.setAuthor('Member Kicked');
-    kickConfirmEmbed.addField('User Kicked', `${mentionMember.tag}`, true);
+    kickConfirmEmbed.addField('User Kicked', `${mentionMember.user.tag}`, true);
     kickConfirmEmbed.addField('Moderator', `${message.author.tag}`, true);
     kickConfirmEmbed.addField('Channel', message.channel, true);
     kickConfirmEmbed.setTimestamp();

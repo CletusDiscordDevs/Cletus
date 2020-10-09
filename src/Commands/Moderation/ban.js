@@ -6,12 +6,12 @@ module.exports = {
   dev: false,
   usage: {
     doc: 'ban',
-    example: 'an'
+    example: 'Ban @user#3489'
   },
   category: path.basename(__dirname),
   description: 'Ban members',
   run: async (client, message, args) => {
-    const logger = client.guild.channels.cache.find(c => c.name === 'bot-logs');
+    const logger = client.channels.cache.find(c => c.name === 'bot-logs');
     if (message.channel.type === 'DM') return message.reply(new Discord.MessageEmbed().setDescription('You can use this command only in servers'));
     var user = message.mentions.users.first();
     const banReason = args.slice(1).join(' ');
