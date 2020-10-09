@@ -1,16 +1,16 @@
-const Discord = require('discord.js');
-const path = require('path');
-
-module.exports = {
-  name: 'tempmute',
-  dev: false,
-  usage: {
-    doc: 'tempmute [@user] [s/m/d] [reason]',
-    example: 'tempmute [@user#3489] [s/m/d] [reason]'
-  },
-  category: path.basename(__dirname),
-  description: 'Mute member for a time frame',
-  run: async (client, message, args) => {
+//const Discord = require('discord.js');
+//const path = require('path');
+//
+//module.exports = {
+  //name: 'tempmute',
+  //dev: false,
+  //usage: {
+    //doc: 'tempmute [@user] [s/m/d] [reason]',
+    //example: 'tempmute [@user#3489] [s/m/d] [reason]'
+  //},
+  //category: path.basename(__dirname),
+  //description: 'Mute member for a time frame',
+  //run: async (client, message, args) => {
     // rewrite code
     // if (args[0] == undefined) return wrongSyntax.syntax(client, message);
     // let member = getMemberFromMention(message, args[0]);
@@ -45,17 +45,17 @@ module.exports = {
     // embed.setFooter(`Moderator: ${message.author.tag} || Victim: ${member.user.tag}`, message.author.displayAvatarURL());
     // embed.setTimestamp();
     // return message.channel.send({ embed: embed });
-  }
+  //}
 
-};
+//};
 
 // eslint-disable-next-line no-unused-vars
-class wrongSyntax {
-  static syntax (client, message) {
-    let embed = new Discord.MessageEmbed();
-    embed.setTitle('Invalid Syntax');
-    embed.setDescription(`${client.config.prefix}warn <userID or mention> <reason(optional)>`);
-    embed.setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL);
-    return message.channel.send({ embed: embed });
-  }
-}
+//class wrongSyntax {
+  //static syntax (client, message) {
+    //let embed = new Discord.MessageEmbed();
+   // embed.setTitle('Invalid Syntax');
+    //e//mbed.setDescription(`${client.config.prefix}warn <userID or mention> <reason(optional)>`);
+    //embed.setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL);
+    //return message.channel.send({ embed: embed });
+  //}
+//}

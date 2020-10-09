@@ -54,7 +54,8 @@ module.exports = {
     let tempEmbed = new Discord.MessageEmbed();
     tempEmbed.setDescription('User Temp Muted');
     tempEmbed.setColor('#15f153');
-    tempEmbed.addField('Muted User', `${tempMute.tag}`, true);
+    // mentioning muted user is broken fix.
+    tempEmbed.addField('Muted User', `${mentionMember.user.tag}`, true);
     tempEmbed.addField('Muted By', `${message.author.tag}`, true);
     tempEmbed.addField('Channel', message.channel, true);
     tempEmbed.addField('Time', message.createdAt, true);
