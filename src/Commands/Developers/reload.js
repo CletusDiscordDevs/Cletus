@@ -1,10 +1,12 @@
+const Discord = require('discord.js');
+const path = require('path')
+
 module.exports = {
   name: 'reload',
   aliases: ['reload'],
-  category: 'dev',
+  category: path.basename(__dirname),
   description: 'Reloads Commands provided.',
   dev: true,
-  path: __filename,
   run: async (client, message, args) => {
     if (!client.config.developers.includes(message.author.id)) return;
     if (args.length === 1) load(client, message, args[0].toLowerCase());

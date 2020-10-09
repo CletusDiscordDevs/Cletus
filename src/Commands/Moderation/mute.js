@@ -12,7 +12,7 @@ module.exports = {
   category: path.basename(__dirname),
   description: 'Mute member for a time frame',
   run: async (client, message, args) => {
-    const logger = client.guild.channels.cache.find(c => c.name === 'bot-logs');
+    const logger = client.channels.cache.find(c => c.name === 'bot-logs');
     let tempMute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let tempmuteReason = args.join(' ').slice(25);
 
@@ -32,11 +32,11 @@ module.exports = {
     if (!muteRole) {
       try {
         muteRole = await message.guild.roles.create({
-          name: 'Temp Mute',
+          name: 'Muted',
           color: '#000000',
           permissions: []
         });
-        message.guild.channels.forEach(async (channel, id) => {
+        message.guild.channels.cache.forEach(async (channel, id) => {
           await channel.overwritePermissions(muteRole, {
             SEND_MESSAGES: false,
             ADD_REACTIONS: false
