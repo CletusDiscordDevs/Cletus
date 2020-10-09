@@ -13,17 +13,16 @@ module.exports = {
   description: 'Evaluates code',
   run: async (client, message, args) => {
     try {
-      const pkg = args.join(' ');
-      const { body } = await fetch(`https://registry.npmjs.com/${pkg}`);
-      if (body.time.unpublished) return message.cahnnel.send('This package no longer exists.');
-      const version = body.versions[body['dist-tags'].latest];
-      const maintainers = body.maintainers.map(user => user.name);
-      const dependencies = version.dependencies ? Object.keys(version.dependencies) : null;
-      const embed = new Discord.MessageEmbed()
+      let { body } = await fetch(`https://registry.npmjs.com/${args.join(' ')}`);
+      if (body.time.unpublished) return message.channel.send('This package no longer exists.');
+      let version = body.versions[body['dist-tags'].latest];
+      let maintainers = body.maintainers.map(user => user.name);
+      let dependencies = version.dependencies ? Object.keys(version.dependencies) : null;
+      let embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setAuthor('NPM', 'https://i.imgur.com/ErKf5Y0.png', 'https://www.npmjs.com/')
         .setTitle(body.name)
-        .setURL(`https://www.npmjs.com/package/${pkg}`)
+        .setURL(`https://www.npmjs.com/package/${args.join(' ')}`)
         .setDescription(body.description || 'No description.')
         .addField('❯ Version', body['dist-tags'].latest, true)
         .addField('❯ License', body.license || 'None', true)

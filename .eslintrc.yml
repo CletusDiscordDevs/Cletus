@@ -1,0 +1,21 @@
+env:
+  browser: true
+  commonjs: true
+  es2021: true
+extends:
+  - standard
+parserOptions:
+  ecmaVersion: 12
+rules: {
+    "for-direction": ["error"],
+    "getter-return": ["error"],
+    "eqeqeq": ["error"],
+    "semi" : ["error", "always"],
+    "sort-vars": ["error", { 
+        "ignoreCase": false
+    }],
+    "no-redeclare": ["error", { 
+        "builtinGlobals": true 
+    }],
+    "prefer-const": ["off"]
+}

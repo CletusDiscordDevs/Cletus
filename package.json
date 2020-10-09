@@ -1,46 +1,52 @@
 {
-  "name": "cletus",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "node src/index.js",
-    "build": "pkg .",
-    "dev": "nodemon --trace-warnings src/index.js"
-  },
-  "dependencies": {
-    "@discordjs/opus": "^0.3.2",
-    "canvas": "^2.6.1",
-    "chalk": "^4.1.0",
-    "cheerio": "^1.0.0-rc.3",
-    "discord.js": "^12.3.1",
-    "dotenv": "^8.2.0",
-    "ffmpeg-static": "^4.2.7",
-    "mongoose": "^5.10.8",
-    "ms": "^2.1.2",
-    "nightmare": "^3.0.2",
-    "node-fetch": "^2.6.1",
-    "yt-search": "^1.1.2",
-    "ytdl-core": "^2.1.7"
-  },
-  "dev-dependencies": {
-    "pkg": "^4.4.8",
-    "eslint": "^6.8.0",
-    "nodemon": "^2.04",
-    "pm2": "^4.4.0"
-  },
-  "engines": {
-    "node": "12.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
-  "license": "MIT",
-  "bin": "index.js",
-  "pkg": {
-    "scripts": [
-      "Handlers/*.js",
-      "Commands/**/*.js"
-    ]
-  }
+    "name": "cletus",
+    "version": "0.0.1",
+    "description": "A simple Node app built on Express, instantly up and running.",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js",
+        "build": "pkg .",
+        "dev": "nodemon --trace-warnings src/index.js"
+    },
+    "dependencies": {
+        "@discordjs/opus": "^0.3.2",
+        "canvas": "^2.6.1",
+        "chalk": "^4.1.0",
+        "cheerio": "^1.0.0-rc.3",
+        "discord.js": "^12.3.1",
+        "dotenv": "^8.2.0",
+        "ffmpeg-static": "^4.2.7",
+        "mongoose": "^5.10.8",
+        "ms": "^2.1.2",
+        "nightmare": "^3.0.2",
+        "node-fetch": "^2.6.1",
+        "yt-search": "^1.1.2",
+        "ytdl-core": "^2.1.7"
+    },
+    "devDependencies": {
+        "eslint": "^7.10.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
+        "nodemon": "^2.0.4",
+        "pkg": "^4.4.9",
+        "pm2": "^4.5.0"
+    },
+    "engines": {
+        "node": "12.x"
+    },
+    "repository": {
+        "url": "https://glitch.com/edit/#!/hello-express"
+    },
+    "license": "MIT",
+    "bin": "index.js",
+    "pkg": {
+        "scripts": [
+            "Handlers/*.js",
+            "Commands/**/*.js"
+        ]
+    }
 }
