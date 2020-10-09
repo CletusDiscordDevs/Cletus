@@ -1,6 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 const Discord = require('discord.js');
 const path = require('path');
-const util = require('util');
 
 module.exports = {
     name: "ping",
@@ -12,12 +12,20 @@ module.exports = {
     category: path.basename(__dirname),
     description: "Checks the bots ping",
     run: async(client, message) => {
-        // You do not nead to add the emoji
+        // You do not need to add the emoji
     await message.channel.send('<a:googleloading:763951217583849473> Pinging...').then((resultMessage) => {
-        const ping = resultMessage.createdTimestamp - message.createdTimestamp
+      const ping = resultMessage.createdTimestamp - message.createdTimestamp;
 
-        message.channel.send(`Bot latency: ${ping}, API Latency: ${client.ws.ping}`)
 
-    })
-    },
-}
+      let botpingEmbed = new Discord.MessageEmbed();
+      botpingEmbed.setTitle('Cletus Ping')
+      botpingEmbed.setColor('#ffffff');
+      botpingEmbed.addField('Bot 🤖', `${ping}`, true)
+      botpingEmbed.addField('API', `${client.ws.ping}`, true)
+      botpingEmbed.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({size: 2048}))
+      botpingEmbed.setTimestamp()
+
+      message.channel.send(botpingEmbed)
+    });
+  }
+};
