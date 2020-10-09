@@ -1,55 +1,59 @@
 {
-  "dashboard" : {
-    "oauthSecret": "ZhfdhBu49K_b-6Q6M71QbdcZmmhe2foK",
-    "callbackURL": "https://careful-fast-saturn.glitch.me",
-    "sessionSecret": "",
-    "domain": "",
-    "port": 3030
-  },
-  "bot":{
-    "prefix": "=",
-    "developers": ["635569641883697152","572512230701006851","264559276104613889"],
-    "options": {
-      "shards": "auto",
-      "shardCount": 1,
-      "messageCacheMaxSize": 50,
-      "messageCacheLifetime": 30000,
-      "messageSweepInterval": 1800000,
-      "fetchAllMembers": false,
-      "disableMentions": "none",
-      "allowedMentions": null,
-      "partials": [],
-      "restWsBridgeTimeout": 3000,
-      "restTimeOffset": 400,
-      "restRequestTimeout": 5000,
-      "restSweepInterval": 30,
-      "retryLimit": 1,
-      "presence": {
-        "status": null,
-        "afk": null,
-        "activity": {
-            "application": {
-                "id": null
+    "dashboard": {
+        "oauthSecret": "ZhfdhBu49K_b-6Q6M71QbdcZmmhe2foK",
+        "callbackURL": "https://careful-fast-saturn.glitch.me",
+        "sessionSecret": "",
+        "domain": "",
+        "port": 3030
+    },
+    "bot": {
+        "prefix": "=",
+        "developers": [
+            "635569641883697152",
+            "572512230701006851",
+            "264559276104613889"
+        ],
+        "options": {
+            "shards": "auto",
+            "shardCount": 1,
+            "messageCacheMaxSize": 50,
+            "messageCacheLifetime": 30000,
+            "messageSweepInterval": 1800000,
+            "fetchAllMembers": false,
+            "disableMentions": "none",
+            "allowedMentions": null,
+            "partials": [],
+            "restWsBridgeTimeout": 3000,
+            "restTimeOffset": 400,
+            "restRequestTimeout": 5000,
+            "restSweepInterval": 30,
+            "retryLimit": 1,
+            "presence": {
+                "status": null,
+                "afk": null,
+                "activity": {
+                    "application": {
+                        "id": null
+                    },
+                    "name": "",
+                    "type": null,
+                    "url": null,
+                    "shardID": null
+                }
             },
-            "name": "",
-            "type": null,
-            "url": null,
-            "shardID": null
+            "ws": {
+                "large_threshold": 10000,
+                "intents": [
+                    "GUILDS",
+                    "GUILD_MESSAGES"
+                ]
+            },
+            "http": {
+                "version": 7,
+                "api": "https://discordapp.com/api",
+                "cdn": "https://cdn.discordapp.com",
+                "invite": "https://discord.gg"
+            }
         }
-      },
-      "ws": {
-        "large_threshold": 10000,
-        "intents": [
-          "GUILDS",
-          "GUILD_MESSAGES"
-        ]
-      },
-      "http": {
-        "version": 7,
-        "api": "https://discordapp.com/api",
-        "cdn": "https://cdn.discordapp.com",
-        "invite": "https://discord.gg"
-      }
     }
-  } 
 }

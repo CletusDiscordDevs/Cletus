@@ -1,7 +1,6 @@
-const fetch = require("node-fetch");
+// eslint-disable-next-line no-unused-vars
+const fetch = require('node-fetch');
 
 module.exports = () => {
 
-    
-
-} 
+};

@@ -12,4 +12,4 @@
 require('dotenv').config();
 
 let load = require('./bot');
-load(process.env.TOKEN,"=");
+load(process.env.TOKEN, '=');

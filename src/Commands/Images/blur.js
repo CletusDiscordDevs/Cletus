@@ -1,42 +1,40 @@
 const path = require('path');
-const fs = require("fs");
+const fs = require('fs');
 const Discord = require('discord.js');
 const { createCanvas, loadImage } = require('canvas');
 
 module.exports = {
-  name: "blur",
+  name: 'blur',
   dev: false,
   usage: {
-    doc: "blur",
-    example: "blur"
+    doc: 'blur',
+    example: 'blur'
   },
   category: path.basename(__dirname),
-  description: "check your profile",
+  description: 'check your profile',
   path: __filename,
   run: async (client, message, args) => {
-
-    //https://medium.com/better-programming/blurring-image-algorithm-example-in-android-cec81911cd5e
+    // https://medium.com/better-programming/blurring-image-algorithm-example-in-android-cec81911cd5e
 
     let user = message.mentions.members.first() || message.author;
     let msg = await message.channel.send('Generating image...');
-    let avatar = await loadImage(message.attachments[0] || args[0] || user.displayAvatarURL({ format: "jpg", size: 4096 }));
-    let canvas = createCanvas(avatar.height,avatar.width);
+    let avatar = await loadImage(message.attachments[0] || args[0] || user.displayAvatarURL({ format: 'jpg', size: 4096 }));
+    let canvas = createCanvas(avatar.height, avatar.width);
     let ctx = canvas.getContext('2d');
 
     ctx.clearRect(0, 0, avatar.height, avatar.width);
     ctx.drawImage(avatar, 0, 0);
     processCanvasRGB(canvas, 0, 0, avatar.height, avatar.width, 20);
 
-    fs.writeFileSync("data", canvas.toDataURL());
-    let attachment = new Discord.MessageAttachment(canvas.toBuffer(), "random.jpg");
+    fs.writeFileSync('data', canvas.toDataURL());
+    let attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'random.jpg');
     let embed = new Discord.MessageEmbed();
     embed.attachFiles(attachment);
     embed.setImage('attachment://random.jpg');
     msg.delete();
     return message.channel.send(embed);
-
   }
-}
+};
 
 const mulTable = [
   512, 512, 456, 512, 328, 456, 335, 512, 405, 328, 271, 456, 388, 335, 292, 512,
@@ -86,7 +84,7 @@ function processCanvasRGB (canvas, topX, topY, width, height, radius) {
   );
 
   canvas.getContext('2d').putImageData(imageData, topX, topY);
-}
+};
 
 function getImageDataFromCanvas (canvas, topX, topY, width, height) {
   if (typeof canvas === 'string') {
@@ -106,15 +104,15 @@ function getImageDataFromCanvas (canvas, topX, topY, width, height) {
   } catch (e) {
     throw new Error('unable to access image data: ' + e);
   }
-}
+};
 
 function processImageDataRGB (imageData, topX, topY, width, height, radius) {
   const pixels = imageData.data;
 
-  let x, y, i, p, yp, yi, yw, rSum, gSum, bSum,
-    rOutSum, gOutSum, bOutSum,
-    rInSum, gInSum, bInSum,
-    pr, pg, pb, rbs;
+  let bInSum, bOutSum, bSum, gInSum, gOutSum, gSum, i, p, pb, pg,
+    pr, rInSum, rOutSum,
+    rSum, rbs, x,
+    y, yi, yp, yw;
 
   const div = 2 * radius + 1;
   const widthMinus1 = width - 1;
@@ -305,8 +303,8 @@ function processImageDataRGB (imageData, topX, topY, width, height, radius) {
 
 class BlurStack {
   /**
-   * Set properties.
-   */
+     * Set properties.
+     */
   constructor () {
     this.r = 0;
     this.g = 0;
