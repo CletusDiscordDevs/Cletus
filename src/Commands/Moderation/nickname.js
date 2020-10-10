@@ -13,7 +13,7 @@ module.exports = {
   description: 'Changes the nickname of a user',
   argsType: 'multiple',
 
-  run: async (message, args) => {
+  run: async (client, message, args) => {
     const target = message.mentions.users.first();
     const member = message.guild.members.cache.get(target.id);
 
