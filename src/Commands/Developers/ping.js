@@ -10,7 +10,7 @@ module.exports = {
         example: "ping"
     },
     category: path.basename(__dirname),
-    description: "Checks the bots ping",
+    description: "Checks the api and bots ping",
     run: async(client, message) => {
         // You do not need to add the emoji
     await message.channel.send('<a:googleloading:763951217583849473> Pinging...').then((resultMessage) => {

@@ -10,7 +10,7 @@ module.exports = {
     example: 'npm winston'
   },
   category: path.basename(__dirname),
-  description: 'Evaluates code',
+  description: 'Displays information on NPMs',
   run: async (client, message, args) => {
     try {
       const pkg = args.join(' ');

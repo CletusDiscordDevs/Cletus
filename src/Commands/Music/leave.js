@@ -11,8 +11,8 @@ module.exports = {
     if (!message.guild.me.hasPermission(['CONNECT', 'SPEAK'])) return client.util.missingPerms(message, ['CONNECT', 'SPEAK']);
     if (player) client.music.players.delete(message.guild.id);
 
-    player.voiceChannel.disconnect();
+    message.member.voice.connection.disconnect()
 
-    return message.channel.send(`Successfully left ${player.voiceChannel.name}`);
+    return message.channel.send(`Successfully left ${message.member.voice.channel.name}`);
   }
 };
