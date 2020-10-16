@@ -8,8 +8,8 @@ class SpotifyManager {
 
   async search (proxy, query) {
     let res = await fetch(`https://spclient.wg.spotify.com/searchview/km/v4/search/${encodeURIComponent(query)}?entityVersion=2&limit=10&imageSize=large&catalogue=&country=US&locale=en&platform=web`, {
-      // "host": proxy[0],
-      // "port": proxy[1],
+      host: proxy[0],
+      port: proxy[1],
       headers: {
         authorization: `Bearer ${this.accessToken}`
       }
