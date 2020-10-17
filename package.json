@@ -5,6 +5,7 @@
     "main": "src/index.js",
     "scripts": {
         "start": "node src/index.js",
+        "test": "mocha",
         "build": "pkg .",
         "dev": "nodemon --trace-warnings src/index.js"
     },
@@ -31,6 +32,7 @@
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-promise": "^4.2.1",
         "eslint-plugin-standard": "^4.0.1",
+        "mocha": "^8.2.0",
         "nodemon": "^2.0.4",
         "pkg": "^4.4.9",
         "pm2": "^4.5.0"
