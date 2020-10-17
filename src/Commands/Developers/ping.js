@@ -16,16 +16,15 @@ module.exports = {
     await message.channel.send('<a:googleloading:763951217583849473> Pinging...').then((resultMessage) => {
       const ping = resultMessage.createdTimestamp - message.createdTimestamp;
 
-
       let botpingEmbed = new Discord.MessageEmbed();
-      botpingEmbed.setTitle('Cletus Ping')
+      botpingEmbed.setTitle('Cletus Ping');
       botpingEmbed.setColor('#ffffff');
-      botpingEmbed.addField('Bot 🤖', `${ping}`, true)
-      botpingEmbed.addField('API', `${client.ws.ping}`, true)
-      botpingEmbed.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({size: 2048}))
-      botpingEmbed.setTimestamp()
+      botpingEmbed.addField('🤖 Bot Latency', `${ping}`, true);
+      botpingEmbed.addField('🌐 API Latency', `${client.ws.ping}`, true);
+      botpingEmbed.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({ size: 2048 }));
+      botpingEmbed.setTimestamp();
 
-      message.channel.send(botpingEmbed)
+      message.channel.send(botpingEmbed);
     });
   }
 };
