@@ -10,10 +10,10 @@ module.exports = {
     example: 'npm winston'
   },
   category: path.basename(__dirname),
-  description: 'Evaluates code',
+  description: 'Displays information on NPMs',
   run: async (client, message, args) => {
     try {
-      let { body } = await fetch(`https://registry.npmjs.com/${args.join(' ')}`);
+  const jsonRes = await fetch(`https://registry.npmjs.com/${args.join(' ')}`).then(res => res.json())
       if (body.time.unpublished) return message.channel.send('This package no longer exists.');
       let version = body.versions[body['dist-tags'].latest];
       let maintainers = body.maintainers.map(user => user.name);
@@ -36,7 +36,7 @@ module.exports = {
         .setTimestamp();
       return message.channel.send(embed);
     } catch (err) {
-      if (err.statusCode === 404) return message.channel.send('Could not find any results.');
+      if (err.statusCode === 200) return message.channel.send('Could not find any results.');
       return message.reply(`Oh no, an error occurred: \`${err.message}\`. Try again later!`);
     };
   }

@@ -10,28 +10,28 @@ module.exports = {
   },
   description: 'Shows a apex legends status',
   run: async (client, message, args) => {
-    // check code out
-    // let res = await fetch(`https://public-api.tracker.gg/v2/apex/standard/profile/${args[0]}/${args[1]}`, {
-    //   headers: {
-    //     'TRN-Api-Key': process.env.TrackerAPI,
-    //     Accept: 'application/json',
-    //     'Accept-Encoding': 'gzip'
-    //   }
-    // });
-    // let body = await res.json();
-    // console.log(res.status);
-    // if (res.status !== 200) return message.channel.send('Something went wrong!');
+    //rewrite code
+     let res = await fetch(`https://public-api.tracker.gg/v2/apex/standard/profile/${args[0]}/${args[1]}`, {
+       headers: {
+        'TRN-Api-Key': process.env.TrackerAPI,
+        Accept: 'application/json',
+        'Accept-Encoding': 'gzip'
+       }
+     });
+     let body = await res.json();
+     console.log(res.status);
+    if (res.status !== 200) return message.channel.send('Something went wrong!');
 
-    // let fields = data(body);
+     let fields = data(body);
 
-    // let segment = body.data.segments[0].stats;
-    // let embed = new Discord.MessageEmbed();
-    // embed.setTitle(`${user} Apex Legends Status`);
-    // embed.setThumbnail(body.data.platformInfo.avatarUrl);
-    // embed.addFields(fields);
-    // embed.setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL());
-    // embed.setTimestamp();
-    // return message.channel.send({ embed: embed });
+    let segment = body.data.segments[0].stats;
+     let embed = new Discord.MessageEmbed();
+    embed.setTitle(`${user} Apex Legends Status`);
+    embed.setThumbnail(body.data.platformInfo.avatarUrl);
+     embed.addFields(fields);
+    embed.setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL());
+     embed.setTimestamp();
+     return message.channel.send({ embed: embed });
   }
 };
 

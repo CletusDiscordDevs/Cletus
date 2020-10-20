@@ -19,7 +19,8 @@ module.exports = {
     if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(new Discord.MessageEmbed().setDescription("You haven't the permission to execute this command!"));
 
     await message.channel.messages.fetch({ limit: args[0] }).then(messages => {
-      message.channel.bulkDelete(messages);
+      message.channel.bulkDelete(messages).then(messages => message.channel.send(`Deleted ${messages.size} messages`))
+      
     });
   }
 };
