@@ -1,5 +1,14 @@
+# NodeJS Dependencies
 node_modules/
+
+# Visual Studio Code Settings
 .vscode/
+
+# Local Environment Variables
 .env
-json.sqlite
+
+# Fetched Proxies from Public Sources
 src/Assets/Core/proxies.txt
+
+# Local Docker Mongo Data
+mongo-volume/

@@ -1,10 +1,10 @@
 FROM node:latest
 
-COPY . /usr/src
+COPY . .
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get -y upgrade \
-    && npm install -ci
+    && npm install --unsafe-perm=true --allow-root
 
-ENTRYPOINT [ "node", "index.js" ]
+ENTRYPOINT [ "node", "src/index.js" ]

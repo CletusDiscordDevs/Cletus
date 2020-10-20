@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+    app:
+        container_name: 'cletus'
+        environment: 
+            env_file: .env
+        links:
+            - 'database:app'
+        build: 
+            context: .
+            args: 
+                - mount="type=volume,target=/usr/src/node_modules"
+            dockerfile: Dockerfile 
+    database:
+        image: mongo:latest
+        container_name: 'cletus-mongo-server'
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=root
+            - MONGO_INITDB_ROOT_PASSWORD=root
+            - MONGO_INITDB_DATABASE=Development
+        volumes: 
+            - ./mongo-volume:/data/db
+        ports: 
+            - '27017-27019:27017-27019'
+       

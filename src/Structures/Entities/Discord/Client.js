@@ -6,11 +6,11 @@ const FileWalker = require('../../Functions/Process/FileWalker');
 
 class Client extends Discord.Client {
   constructor (token, prefix) {
-    super(require('../../../config.json').bot.options);
+    super(require('../../../config.json').options);
     this.commands = new Discord.Collection();
     this.aliases = new Discord.Collection();
     this.music = new (require('./Music/index').MusicManager)();
-    this.config = require('../../../config.json').bot;
+    this.config = require('../../../config.json');
     this.util = require('../../Functions/Client/index.js');
     this.logger = require('../Process/Logger');
     this.options = this.config.options;

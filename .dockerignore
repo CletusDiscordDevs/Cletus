@@ -1,0 +1,11 @@
+# Node Dependencies
+node_modules
+
+# Development MongoDB Volume
+mongo-volume
+
+# Heroku Configuration
+Procfile
+
+# Azure pipeline Configuration
+azure-pipelines.yml
