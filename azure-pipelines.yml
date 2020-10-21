@@ -15,7 +15,7 @@ steps:
     versionSpec: '14.x'
   displayName: 'Install Node.js'
 
-- script: |
+- script:
     npm ci
     node src/index.js
   timeoutInMinutes: 0 # how long to run the job before automatically cancelling

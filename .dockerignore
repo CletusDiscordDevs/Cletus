@@ -9,3 +9,9 @@ Procfile
 
 # Azure pipeline Configuration
 azure-pipelines.yml
+
+# Ignore Vagrant Machine Configuration
+Vagrantfile
+
+# Ignore Vagrant Machines
+.vagrant/machines

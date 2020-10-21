@@ -9,17 +9,24 @@ services:
         build: 
             context: .
             args: 
-                - mount="type=volume,target=/usr/src/node_modules"
+                - mount='type=volume,target=/usr/src/node_modules'
             dockerfile: Dockerfile 
     database:
-        image: mongo:latest
-        container_name: 'cletus-mongo-server'
-        environment:
-            - MONGO_INITDB_ROOT_USERNAME=root
-            - MONGO_INITDB_ROOT_PASSWORD=root
-            - MONGO_INITDB_DATABASE=Development
-        volumes: 
-            - ./mongo-volume:/data/db
-        ports: 
-            - '27017-27019:27017-27019'
+        image: postgres:latest
+        container_name: 'cletus-postgres'
+        environment: 
+            - POSTGRES_USER=root
+            - POSTGRES_PASSWORD=root
+            - POSTGRES_DB=Production
+    # database:
+    #     image: mongo:latest
+    #     container_name: 'cletus-mongo-server'
+    #     environment:
+    #         - MONGO_INITDB_ROOT_USERNAME=root
+    #         - MONGO_INITDB_ROOT_PASSWORD=root
+    #         - MONGO_INITDB_DATABASE=Production
+    #     volumes: 
+    #         - ./mongo-volume:/data/db
+    #     ports: 
+    #         - '27017-27019:27017-27019'
        
