@@ -22,6 +22,6 @@ module.exports = {
 
     member.setNickname(nickname);
 
-    message.channel.send(`You changed the nickname for ${user.tag}`);
+    message.channel.send(`You changed the nickname for ${target.username}#${target.discriminator}`);
   }
 };
