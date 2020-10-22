@@ -8,7 +8,8 @@ node_modules/
 .env
 
 # Fetched Proxies from Public Sources
-src/Assets/Core/proxies.txt
+src/Assets/proxies.txt
 
 # Local Docker Mongo Data
 mongo-volume/
+
