@@ -8,8 +8,6 @@ services:
             - 'database:app'
         build: 
             context: .
-            args: 
-                - mount='type=volume,target=/usr/src/node_modules'
             dockerfile: Dockerfile 
     database:
         image: postgres:latest
