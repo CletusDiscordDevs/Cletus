@@ -1,17 +1,42 @@
+# General Files
+LICENSE
+
+# Github workflows
+.github
+# Azure pipeline Configuration
+azure-pipelines.yml
+
+
+# Specific Unneeded Node Configurations for Production
+
+# Unit Tests
+test
 # Node Dependencies
 node_modules
+
+# Database Data
 
 # Development MongoDB Volume
 mongo-volume
 
+
+# Dev Environment Configurations
+
+# Visual Studio Code Dev Container Dev Environment Configurations
+.devcontainer 
+# Vagrant Machine Configuration
+Vagrantfile
+# Vagrant Machines
+.vagrant/machines
+
+
+# Production Infrastructure Configurations
+
 # Heroku Configuration
 Procfile
 
-# Azure pipeline Configuration
-azure-pipelines.yml
-
-# Ignore Vagrant Machine Configuration
-Vagrantfile
-
-# Ignore Vagrant Machines
-.vagrant/machines
+# Unneeded Configurations when deploying with docker
+# Docker Services File
+docker-compose.yml
+# Docker Ignore File/Folder File
+.dockerignore
