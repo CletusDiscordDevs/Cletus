@@ -41,7 +41,7 @@
             ]
         },
         "http": {
-            "version": 7,
+            "version": 8,
             "api": "https://discordapp.com/api",
             "cdn": "https://cdn.discordapp.com",
             "invite": "https://discord.gg"
