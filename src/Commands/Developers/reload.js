@@ -1,44 +1,60 @@
-const Discord = require('discord.js');
-const path = require('path')
+// const Discord = require('discord.js')
+// const path = require('path')
 
-module.exports = {
-  name: 'reload',
-  category: path.basename(__dirname),
-  description: 'Reloads Commands provided.',
-  dev: true,
-  run: async (client, message, args) => {
-    if (!client.config.developers.includes(message.author.id)) return;
-    if (args.length === 1) load(client, message, args[0].toLowerCase());
-    else load(client, message);
-  }
-};
+// module.exports = {
+//   name: "reload",
+//   dev: true,
+//   description: 'Reload a command. Developers only!',
+//   category: path.basename(__dirname),
+//   usage: {
+//  doc: 'reload <command>',
+//  example: 'reload test'
+// }
+  
+  
+//    run: async (client, message, args) {
+//     const commandName = args[0];
 
-function load (client, message, command) {
-  if (command) {
-    if (!Array.from(client.commands).concat(client.aliases).flat().find(c => c.name === command.toLowerCase())) return message.channel.send('That is not a valid command!');
-    const commandPath = client.commands.get(command.toLowerCase()).path;
-    delete require.cache[require.resolve(commandPath)];
-    client.commands.delete(command);
-    client.commands.set(command, require(commandPath));
-    if (client.aliases.has(command)) {
-      let aliases = client.aliases.filter((prop) => prop.name === command.toLowerCase());
-      aliases.array().forEach((prop, i) => {
-        client.commands.delete(prop.name);
-        client.commands.set(prop.aliases[i], prop);
-      });
-    }
-    return message.channel.send(`Reloaded ${command}!`);
-  } else {
-    Array.from(client.commands).forEach((command) => {
-      delete require.cache[require.resolve(command.path)];
-      client.commands.delete(command.name);
-      client.commands.set(command.name, require(command.path));
-      if (!command.aliases) return;
-      Array.from(command.aliases).forEach((prop, i) => {
-        client.aliases.delete(prop.name);
-        client.commands.set(prop.aliases[i], prop);
-      });
-    });
-    return message.channel.send('Reloaded all of the commands!');
-  };
-};
+//     if (!commandName) {
+//       let cmdEmbed = new MessageEmbed()
+//         .setTitle('Reload Unsuccessful')
+//         .setDescription(`Please specify a command for me to reload!`)
+//         .setTimestamp(message.createdAt, true)
+        
+
+//       message.channel.send(cmdEmbed)
+//       return;
+//     }
+
+//     const command = message.client.commands.get(commandName) || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
+//     if (!command) {
+//       let cmdNoExistEmbed = new MessageEmbed()
+//         .setTitle('Reload Unsuccessful')
+//         .setDescription(`There is no command with the name or alias **\`${commandName}\`**!`)
+//         .setTimestamp(message.createdAt, true)
+        
+
+//       message.channel.send(cmdNoExistEmbed)
+//     }
+
+//     delete require.cache[require.resolve(`../../Commands/${command.category}/${command.name}.js`)];
+
+//     try {
+//       const newCommand = require(`../../Commands/${command.category}/${command.name}.js`);
+//       message.client.commands.set(newCommand.name, newCommand);
+
+//       let cmdReloadedEmbed = new MessageEmbed()
+//         .setTitle('Reload Successful')
+//         .setDescription(`The command \`${command.name}\` was reloaded!`)
+//         .setTimestamp(message.createdAt, true)
+        
+
+//       message.channel.send(cmdReloadedEmbed)
+//       console.log(`${chalk.yellow('[Command]')} ${command.name} was reloaded by ${message.author.tag}`);
+//     } catch (error) {
+//       console.error(error);
+//       message.channel.send(`There was an error while reloading a command \`${command.name}\`:\n\`${error.message}\``);
+//     }
+//   }
+// }

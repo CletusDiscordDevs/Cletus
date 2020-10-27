@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
   name: 'npm',
-  dev: true,
+  dev: false,
   usage: {
     doc: 'npm <package name>',
     example: 'npm winston'
