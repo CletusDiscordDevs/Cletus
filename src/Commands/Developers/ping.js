@@ -12,19 +12,20 @@ module.exports = {
     category: path.basename(__dirname),
     description: "Checks the api and bots ping",
     run: async(client, message) => {
-        // You do not need to add the emoji
-    await message.channel.send('<a:googleloading:763951217583849473> Pinging...').then((resultMessage) => {
-      const ping = resultMessage.createdTimestamp - message.createdTimestamp;
+        
+      message.channel.send("<a:googleloading:763951217583849473> Pinging...").then(m => {
+      let ping = m.createdTimestamp - message.createdTimestamp;
 
-      let botpingEmbed = new Discord.MessageEmbed();
+      m.delete();
+      let botpingEmbed = new Discord.MessageEmbed()
       botpingEmbed.setTitle('Cletus Ping');
-      botpingEmbed.setColor('#ffffff');
-      botpingEmbed.addField('🤖 Bot Latency', `${ping}`, true);
-      botpingEmbed.addField('🌐 API Latency', `${client.ws.ping}`, true);
+      botpingEmbed.setColor('#f8f8f8');
+      botpingEmbed.addField('🤖 Bot Latency', `${client.ws.ping}`, true);
+      botpingEmbed.addField('🌐 API Latency', `${ping}`, true)
       botpingEmbed.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL({ size: 2048 }));
       botpingEmbed.setTimestamp();
 
-      message.channel.send(botpingEmbed);
+      message.channel.send(botpingEmbed)
     });
   }
-};
+}
