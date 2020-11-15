@@ -38,9 +38,9 @@ function getData (html) {
   $('div#rso div.g').each((i, e) => {
     let rowData = $(e).find('div.rc');
     data.push({
-      title: rowData.find('div.r a h3 span').text(),
-      link: rowData.find('div.r a').attr('href'),
-      desc: rowData.find('div.s div span.st span').text()
+      title: rowData.find('div a h3 span').text(),
+      link: rowData.find('div a').attr('href'),
+      desc: rowData.find('div div span span').text()
     });
   });
 

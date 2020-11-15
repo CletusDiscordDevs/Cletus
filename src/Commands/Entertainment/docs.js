@@ -1,5 +1,5 @@
 const path = require('path');
-const axios = require('axios');
+const fetch = require('node-fetch');
 
 module.exports = {
   name: 'docs',
@@ -11,21 +11,11 @@ module.exports = {
   category: path.basename(__dirname),
   description: 'Displays Discord.js documentation',
   run: async (client, message, args) => {
-    const uri = `https://djsdocs.sorta.moe/v2/embed?src=stable&q=${encodeURIComponent(args)}`;
 
-    axios
-      .get(uri)
-      .then((embed) => {
-        const { data } = embed;
-
-        if (data && !data.error) {
-          message.channel.send({ embed: data });
-        } else {
-          message.channel.send('❌ Could not find that documentation');
-        }
-      })
-      .catch(err => {
-        console.error(err);
-      });
+    let res = await fetch(`https://djsdocs.sorta.moe/v2/embed?src=stable&q=${encodeURIComponent(args)}`);
+    let body = await res.json();
+    if(body) message.channel.send({ embed: body });
+    else return message.channel.send('❌ Could not find that documentation');
+    
   }
 };
