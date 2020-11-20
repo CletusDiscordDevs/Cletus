@@ -18,11 +18,11 @@
         "discord.js": "^12.4.1",
         "dotenv": "^8.2.0",
         "ffmpeg-static": "^4.2.7",
-        "http-proxy-agent": "^4.0.1",
-        "https-proxy-agent": "^5.0.0",
+        "moment": "^2.29.1",
         "ms": "^2.1.2",
         "nightmare": "^3.0.2",
         "node-fetch": "^2.6.1",
+        "proxy-agent": "^4.0.0",
         "yt-search": "^2.5.0",
         "ytdl-core": "^4.0.4"
     },
