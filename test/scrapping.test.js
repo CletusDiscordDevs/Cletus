@@ -5,7 +5,7 @@
  *  @example {string} Example - https://github.com/Cog-Creators/Red-DiscordBot/tree/V3/develop/tests
  */
 
-const Scrapper = require("./src/Structures/Entities/Process/Scrapper.js");
+const Scrapper = require("../src/Structures/Entities/Process/Scrapper.js");
 
 describe('Scapping elements from websites', async () => {
 

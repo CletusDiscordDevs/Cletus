@@ -19,7 +19,6 @@ RUN apk del .gyp python3 make g++ .npm-deps cairo-dev libjpeg-turbo-dev pango-de
 # Runtime Layer
 FROM node:lts-alpine
 
-USER node
 WORKDIR /usr/src
 
 COPY --from=build /usr/src/node_modules /usr/src/node_modules
