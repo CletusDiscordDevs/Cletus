@@ -13,7 +13,7 @@ module.exports = {
   description: 'Mute member for a time frame',
   run: async (client, message, args) => {
     const logger = client.channels.cache.find(c => c.name === 'bot-logs');
-    let tempMute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let tempMute = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
     let tempmuteReason = args.join(' ').slice(25);
 
     if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.delete();
