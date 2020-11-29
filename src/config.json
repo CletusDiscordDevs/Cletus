@@ -37,7 +37,8 @@
             "large_threshold": 10000,
             "intents": [
                 "GUILDS",
-                "GUILD_MESSAGES"
+								"GUILD_MESSAGES",
+								"GUILD_VOICE_STATES"
             ]
         },
         "http": {
