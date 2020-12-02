@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Noto+Sans+JP:wght@300&display=swap');
+
+body {
+	background-color: lightblue;
+}
+
+div {
+	text-align: center;
+}
+
+body div h1 {
+	font-family: 'Cinzel', serif;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+body div a {
+	font-family: 'Cinzel', serif;
+}
