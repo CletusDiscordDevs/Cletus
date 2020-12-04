@@ -4,7 +4,18 @@ const fetch = require('node-fetch');
 const Discord = require('discord.js');
 const FileWalker = require('../../Functions/Process/FileWalker');
 
+/**
+ * Custom Discord Client
+ * @class
+ */
 class Client extends Discord.Client {
+
+  /**
+   * @constructor
+   * @param {string} token - Discord client Token 
+   * @param {string} prefix  - Discord bot prefix
+   */
+
   constructor (token, prefix) {
     super(require('../../../config.json').options);
     this.commands = new Discord.Collection();
@@ -19,6 +30,13 @@ class Client extends Discord.Client {
     this.load(token, prefix);
   }
 
+  /** 
+   * Things to create when instance has been created
+   * @async
+   * @function
+   * @param {string} token - Discord client token
+   * @param {string} prefix - Discord bot prefix
+   */
   async load (token, prefix) {
     this.logger.info('Client', 'Preparing to login');
     this.config.prefix = prefix;
@@ -39,6 +57,10 @@ class Client extends Discord.Client {
     this.logger.debug('Client', `Developed by ${developers}`);
   }
 
+  /**
+   * load commands
+   * @function
+   */
   loadCmds () {
     let cmds = {};
     // eslint-disable-next-line no-return-assign
@@ -61,6 +83,10 @@ class Client extends Discord.Client {
     });
   }
 
+  /**
+   * load events
+   * @function
+   */
   loadEvts () {
     return FileWalker(`${process.cwd()}/src/Events`).forEach((fp) => {
       let eName = path.basename(fp).replace('.js', '');
